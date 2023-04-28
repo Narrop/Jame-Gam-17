@@ -1,19 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ujqj18js0ov3"]
+[gd_scene load_steps=5 format=3 uid="uid://dkb3cumlejraj"]
 
-[ext_resource type="PackedScene" uid="uid://dgf6pou73osmu" path="res://menu/Bedroom.tscn" id="1_56xyl"]
-[ext_resource type="PackedScene" uid="uid://bh2sy7atvhic8" path="res://menu/Player.tscn" id="2_hwcrg"]
+[ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
 [ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]
 size = Vector2(130, 128)
 
 [node name="Level1" type="Node2D"]
-
-[node name="Bedroom" parent="." instance=ExtResource("1_56xyl")]
-position = Vector2(482, 353)
-
-[node name="Player" parent="." instance=ExtResource("2_hwcrg")]
-position = Vector2(571, 447)
+position = Vector2(52, -37)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(596, 619)
@@ -25,3 +20,9 @@ texture = ExtResource("3_bbgyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_d1m1l")
+
+[node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
+position = Vector2(128, 78)
+
+[node name="Player" parent="." instance=ExtResource("3_2htcg")]
+position = Vector2(175, 495)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3ajfl1lgssbo"]
+
+[ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_iieip"]
+[ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_nijwl"]
+[ext_resource type="Script" path="res://Scenes/Actors/Trail.gd" id="3_ib80f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueqv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nijwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h82p5"]
+radius = 165.076
+
+[node name="Room" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iieip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5)
+scale = Vector2(3.57432, 3.57432)
+sprite_frames = SubResource("SpriteFrames_ueqv2")
+
+[node name="Trail" type="Line2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -1.39887)
+scale = Vector2(0.279773, 0.279773)
+script = ExtResource("3_ib80f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h82p5")
