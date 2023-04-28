@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_sfjol"]
 [ext_resource type="Script" path="res://menu/Trail.gd" id="3_olhmf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eeh4h"]
-radius = 37.054
-
 [sub_resource type="Curve" id="Curve_27olu"]
 _data = [Vector2(0.00408163, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eeh4h"]
+radius = 37.054
+
 [node name="Bedroom" type="RigidBody2D"]
+position = Vector2(138, -6)
 metadata/_edit_group_ = true
 
 [node name="Bedroom" type="Sprite2D" parent="."]
@@ -21,11 +22,14 @@ texture = ExtResource("1_50m4l")
 [node name="Bulle" type="Sprite2D" parent="."]
 texture = ExtResource("2_sfjol")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_eeh4h")
-
-[node name="Trail" type="Line2D" parent="."]
+[node name="Trail" type="Line2D" parent="Bulle"]
 show_behind_parent = true
+position = Vector2(2.96573, 37.5221)
+scale = Vector2(0.730388, 0.292035)
+points = PackedVector2Array(1, 1, -48, -50, -48, -48, -47, -18, -159.726, -25.7576, -103, -6, -83, -27, -81, -46, -81, -44, -123, -32, -124, -48)
 width_curve = SubResource("Curve_27olu")
 default_color = Color(0.345098, 0.0941176, 0.458824, 1)
 script = ExtResource("3_olhmf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eeh4h")
