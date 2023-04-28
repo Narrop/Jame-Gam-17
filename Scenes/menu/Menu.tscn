@@ -1,7 +1,24 @@
-[gd_scene format=3 uid="uid://n75v5mci44ws"]
+[gd_scene load_steps=2 format=3 uid="uid://n75v5mci44ws"]
+
+[ext_resource type="Texture2D" uid="uid://bdl5s23dkgmwt" path="res://Asset/Button_menu.png" id="1_c216e"]
 
 [node name="Menu" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 893.0
 offset_bottom = 434.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(435, 187)
+scale = Vector2(2.3209, 2.22727)
+texture = ExtResource("1_c216e")
+
+[node name="Play" type="Area2D" parent="Sprite2D"]
+position = Vector2(-187.428, -83.9592)
+scale = Vector2(0.430868, 0.44898)
+
+[node name="Options" type="Area2D" parent="Sprite2D"]
+
+[node name="Quit" type="Area2D" parent="Sprite2D"]
+
+[node name="Credits" type="Area2D" parent="Sprite2D"]
