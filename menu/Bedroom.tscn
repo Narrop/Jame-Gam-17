@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_sfjol"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eeh4h"]
-radius = 174.0
+radius = 37.054
 
 [node name="Bedroom" type="RigidBody2D"]
 
 [node name="Bedroom" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_50m4l")
 
 [node name="Bulle" type="Sprite2D" parent="."]
-scale = Vector2(4.2, 4.2)
 texture = ExtResource("2_sfjol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

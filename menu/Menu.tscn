@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://n75v5mci44ws"]
+[gd_scene load_steps=2 format=3 uid="uid://n75v5mci44ws"]
+
+[ext_resource type="PackedScene" uid="uid://4nkrw8lykn6v" path="res://menu/Bedroom.tscn" id="1_21x4k"]
 
 [node name="Menu" type="Node2D"]
+
+[node name="Bedroom" parent="." instance=ExtResource("1_21x4k")]
+position = Vector2(482, 353)
