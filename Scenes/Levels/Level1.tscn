@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkb3cumlejraj"]
+[gd_scene load_steps=6 format=3 uid="uid://dkb3cumlejraj"]
 
+[ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
-[ext_resource type="PackedScene" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
+[ext_resource type="PackedScene" uid="uid://b7vwsvcmwtpir" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
 [ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]
@@ -9,6 +10,20 @@ size = Vector2(130, 128)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(52, -37)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(52, -37)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(-51, 259)
+scale = Vector2(1.40807, 1.40807)
+texture = ExtResource("1_q8rh6")
+region_enabled = true
+region_rect = Rect2(0, 0, 3176, 446)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(596, 619)
@@ -26,3 +41,7 @@ position = Vector2(128, 78)
 
 [node name="Player" parent="." instance=ExtResource("3_2htcg")]
 position = Vector2(768, 446)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-768, -446)
+anchor_mode = 0
