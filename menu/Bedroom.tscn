@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgf6pou73osmu"]
+[gd_scene load_steps=6 format=3 uid="uid://4nkrw8lykn6v"]
 
 [ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_50m4l"]
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_sfjol"]
@@ -13,6 +13,7 @@ radius = 37.054
 
 [node name="Bedroom" type="RigidBody2D"]
 position = Vector2(138, -6)
+gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="Bedroom" type="Sprite2D" parent="."]
@@ -27,6 +28,7 @@ show_behind_parent = true
 position = Vector2(2.96573, 37.5221)
 scale = Vector2(0.730388, 0.292035)
 points = PackedVector2Array(1, 1, -48, -50, -48, -48, -47, -18, -159.726, -25.7576, -103, -6, -83, -27, -81, -46, -81, -44, -123, -32, -124, -48)
+width = 60.0
 width_curve = SubResource("Curve_27olu")
 default_color = Color(0.345098, 0.0941176, 0.458824, 1)
 script = ExtResource("3_olhmf")

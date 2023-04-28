@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ujqj18js0ov3"]
+[gd_scene load_steps=5 format=3 uid="uid://bwut6quf7sm6t"]
 
-[ext_resource type="PackedScene" uid="uid://dgf6pou73osmu" path="res://menu/Bedroom.tscn" id="1_56xyl"]
-[ext_resource type="PackedScene" uid="uid://bh2sy7atvhic8" path="res://menu/Player.tscn" id="2_hwcrg"]
+[ext_resource type="PackedScene" uid="uid://4nkrw8lykn6v" path="res://menu/Bedroom.tscn" id="1_56xyl"]
+[ext_resource type="PackedScene" uid="uid://v4752tfptql1" path="res://menu/Player.tscn" id="2_hwcrg"]
+[ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]
+size = Vector2(130, 128)
 
 [node name="Level1" type="Node2D"]
 
@@ -10,3 +14,14 @@ position = Vector2(482, 353)
 
 [node name="Player" parent="." instance=ExtResource("2_hwcrg")]
 position = Vector2(571, 447)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(596, 619)
+scale = Vector2(10, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = ExtResource("3_bbgyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_d1m1l")
