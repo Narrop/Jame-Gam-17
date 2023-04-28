@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4wbexkerntwa"]
+[gd_scene load_steps=21 format=3 uid="uid://c4wbexkerntwa"]
 
 [ext_resource type="Texture2D" uid="uid://d3kh3wxr7oowu" path="res://Asset/Perso.png" id="1_dfats"]
 [ext_resource type="Script" path="res://Scenes/Actors/Player.gd" id="1_ibu8m"]
@@ -30,34 +30,6 @@ region = Rect2(320, 192, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nojb5"]
 atlas = ExtResource("1_dfats")
 region = Rect2(384, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nohm5"]
-atlas = ExtResource("1_dfats")
-region = Rect2(384, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ukvbs"]
-atlas = ExtResource("1_dfats")
-region = Rect2(320, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2w37g"]
-atlas = ExtResource("1_dfats")
-region = Rect2(256, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_op1hi"]
-atlas = ExtResource("1_dfats")
-region = Rect2(192, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nq13m"]
-atlas = ExtResource("1_dfats")
-region = Rect2(128, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qaqkn"]
-atlas = ExtResource("1_dfats")
-region = Rect2(64, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_58mdb"]
-atlas = ExtResource("1_dfats")
-region = Rect2(0, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ty704"]
 atlas = ExtResource("1_dfats")
@@ -121,33 +93,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jumping Up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nohm5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ukvbs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2w37g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_op1hi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nq13m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qaqkn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_58mdb")
-}],
-"loop": true,
-"name": &"Jumping_Down",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,7 +138,10 @@ script = ExtResource("1_ibu8m")
 sprite_frames = SubResource("SpriteFrames_rpyvj")
 animation = &"Jumping Up"
 autoplay = "Walking"
+frame_progress = 0.892529
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_dwsf1")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
