@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkb3cumlejraj"]
 
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
-[ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
+[ext_resource type="PackedScene" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
 [ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]

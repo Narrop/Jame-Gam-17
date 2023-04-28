@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6itxy6v2ql4i"]
+[gd_scene load_steps=3 format=3 uid="uid://cu0crdt1cmevx"]
 
 [ext_resource type="PackedScene" uid="uid://b3ajfl1lgssbo" path="res://Scenes/Actors/Rooms/Room.tscn" id="1_w7g5x"]
-[ext_resource type="Texture2D" uid="uid://c4acr83onb3sr" path="res://Asset/Bathroom.png" id="2_30es2"]
+[ext_resource type="Texture2D" uid="uid://dn2da6rpv6f6l" path="res://Asset/Bathroom.png" id="2_30es2"]
 
 [node name="Bathroom" instance=ExtResource("1_w7g5x")]
 
