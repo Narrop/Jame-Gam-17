@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://v4752tfptql1"]
+[gd_scene load_steps=28 format=3 uid="uid://v4752tfptql1"]
 
 [ext_resource type="Texture2D" uid="uid://d3kh3wxr7oowu" path="res://Asset/Perso.png" id="1_dfats"]
+[ext_resource type="Script" path="res://menu/Player.gd" id="1_ibu8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rwv2"]
 atlas = ExtResource("1_dfats")
@@ -185,12 +186,14 @@ animations = [{
 height = 42.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ibu8m")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rpyvj")
 animation = &"Walking"
 autoplay = "Walking"
-frame_progress = 0.153507
+frame_progress = 0.994884
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

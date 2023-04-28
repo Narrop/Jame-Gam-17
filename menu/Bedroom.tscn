@@ -7,6 +7,7 @@
 radius = 37.054
 
 [node name="Bedroom" type="RigidBody2D"]
+metadata/_edit_group_ = true
 
 [node name="Bedroom" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
