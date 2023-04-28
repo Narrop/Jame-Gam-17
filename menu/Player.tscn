@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://v4752tfptql1"]
+[gd_scene load_steps=27 format=3 uid="uid://v4752tfptql1"]
 
 [ext_resource type="Texture2D" uid="uid://d3kh3wxr7oowu" path="res://Asset/Perso.png" id="1_dfats"]
 
@@ -181,12 +181,17 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwsf1"]
+height = 42.0
+
 [node name="Player" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rpyvj")
 animation = &"Walking"
 autoplay = "Walking"
-frame_progress = 0.89529
+frame_progress = 0.153507
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_dwsf1")
