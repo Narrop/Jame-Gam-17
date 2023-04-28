@@ -40,11 +40,11 @@ shape = SubResource("RectangleShape2D_d1m1l")
 position = Vector2(128, 78)
 
 [node name="Player" parent="." instance=ExtResource("3_2htcg")]
-position = Vector2(943, 272)
+position = Vector2(909, 358)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(4, -75)
+position = Vector2(0, -75)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
