@@ -1,35 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4wbexkerntwa"]
+[gd_scene load_steps=15 format=3 uid="uid://c4wbexkerntwa"]
 
 [ext_resource type="Texture2D" uid="uid://d3kh3wxr7oowu" path="res://Asset/Perso.png" id="1_dfats"]
 [ext_resource type="Script" path="res://Scenes/Actors/Player.gd" id="1_ibu8m"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rwv2"]
-atlas = ExtResource("1_dfats")
-region = Rect2(0, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ig0ms"]
-atlas = ExtResource("1_dfats")
-region = Rect2(64, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vv5df"]
-atlas = ExtResource("1_dfats")
-region = Rect2(128, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gxetk"]
-atlas = ExtResource("1_dfats")
-region = Rect2(192, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tyh7w"]
-atlas = ExtResource("1_dfats")
-region = Rect2(256, 192, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8qcg"]
 atlas = ExtResource("1_dfats")
 region = Rect2(320, 192, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nojb5"]
-atlas = ExtResource("1_dfats")
-region = Rect2(384, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ty704"]
 atlas = ExtResource("1_dfats")
@@ -71,28 +47,10 @@ region = Rect2(512, 704, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8rwv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ig0ms")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vv5df")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gxetk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tyh7w")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_k8qcg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nojb5")
 }],
 "loop": true,
-"name": &"Jumping Up",
+"name": &"Jumping",
 "speed": 20.0
 }, {
 "frames": [{
@@ -136,12 +94,9 @@ script = ExtResource("1_ibu8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rpyvj")
-animation = &"Jumping Up"
+animation = &"Jumping"
 autoplay = "Walking"
-frame_progress = 0.892529
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_dwsf1")
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
