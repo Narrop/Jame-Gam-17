@@ -45,6 +45,11 @@ region = Rect2(512, 704, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpyvj"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8qcg")
@@ -94,7 +99,7 @@ script = ExtResource("1_ibu8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rpyvj")
-animation = &"Jumping"
+animation = &"Idle"
 autoplay = "Walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
