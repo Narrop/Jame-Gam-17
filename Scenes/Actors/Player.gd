@@ -14,12 +14,10 @@ var _is_falling = true
 
 func _physics_process(delta):
 	
-	sprite.play("Idle")
+
 	
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		sprite.play("Jumping")
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -35,6 +33,12 @@ func _physics_process(delta):
 	elif direction > 0:
 		sprite.play("Walking")
 		sprite.flip_h = false
+	elif is_on_floor() and direction == 0:
+		sprite.play("Idle")
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		sprite.play("Jumping")
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -42,8 +46,3 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
-
-
-func _on_animated_sprite_2d_animation_finished():
-	if sprite.animation == "Jumping Up":
-		_is_falling = true

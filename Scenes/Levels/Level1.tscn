@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
-[ext_resource type="PackedScene" uid="uid://b7vwsvcmwtpir" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
+[ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
 [ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]
@@ -44,4 +44,5 @@ position = Vector2(768, 446)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-768, -446)
-anchor_mode = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
