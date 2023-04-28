@@ -31,6 +31,9 @@ sprite_frames = SubResource("SpriteFrames_ueqv2")
 [node name="Trail" type="Line2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -1.39887)
 scale = Vector2(0.279773, 0.279773)
+points = PackedVector2Array(0, 0)
+width = 60.0
+default_color = Color(0.360784, 0, 0.447059, 1)
 script = ExtResource("3_ib80f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
