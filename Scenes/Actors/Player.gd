@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var sprite = $AnimatedSprite2D
 
+var hurt = false
 
 func _physics_process(delta):
 	
@@ -55,3 +56,7 @@ func _physics_process(delta):
 		get_tree().reload_current_scene()
 	
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area):
+	hurt = true
