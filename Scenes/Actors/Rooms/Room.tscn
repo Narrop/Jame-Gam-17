@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3ajfl1lgssbo"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ajfl1lgssbo"]
 
+[ext_resource type="Script" path="res://Scenes/Actors/Rooms/Room.gd" id="1_1r48m"]
 [ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_iieip"]
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_nijwl"]
 [ext_resource type="Script" path="res://Scenes/Actors/Trail.gd" id="3_ib80f"]
@@ -22,7 +23,9 @@ point_count = 2
 [sub_resource type="CircleShape2D" id="CircleShape2D_h82p5"]
 radius = 165.076
 
-[node name="Room" type="RigidBody2D"]
+[node name="Room" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_1r48m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_iieip")
