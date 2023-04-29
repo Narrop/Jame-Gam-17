@@ -1,12 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkb3cumlejraj"]
+[gd_scene load_steps=6 format=3 uid="uid://d2acg1m43avb1"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
+[ext_resource type="PackedScene" uid="uid://b42aej1ww3h7u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_2ym4r"]
+[ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
 [ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
-[ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="3_bbgyi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m1l"]
-size = Vector2(130, 128)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(52, -37)
@@ -19,28 +17,21 @@ motion_scale = Vector2(0.5, 0.5)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(-51, 259)
+position = Vector2(-51, 35)
 scale = Vector2(1.40807, 1.40807)
 texture = ExtResource("1_q8rh6")
 region_enabled = true
 region_rect = Rect2(0, 0, 3176, 446)
 
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(596, 619)
-scale = Vector2(10, 1)
-metadata/_edit_group_ = true
+[node name="SpawnGround" parent="." instance=ExtResource("2_hrjb1")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Floor"]
-texture = ExtResource("3_bbgyi")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("RectangleShape2D_d1m1l")
+[node name="Ground" parent="SpawnGround" instance=ExtResource("2_2ym4r")]
 
 [node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
-position = Vector2(128, 78)
+position = Vector2(-226, -264)
 
 [node name="Player" parent="." instance=ExtResource("3_2htcg")]
-position = Vector2(943, 272)
+position = Vector2(0, -165)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
