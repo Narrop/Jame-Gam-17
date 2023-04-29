@@ -35,7 +35,7 @@ position = Vector2(0, -165)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(4, -75)
+position = Vector2(0, -75)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
