@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3ajfl1lgssbo"]
+[gd_scene load_steps=9 format=3 uid="uid://b3ajfl1lgssbo"]
 
 [ext_resource type="Script" path="res://Scenes/Actors/Rooms/Room.gd" id="1_1r48m"]
 [ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_iieip"]
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_nijwl"]
-[ext_resource type="Script" path="res://Scenes/Actors/Trail.gd" id="3_ib80f"]
+[ext_resource type="Script" path="res://Scenes/Actors/Rooms/New_trail.gd" id="5_ogwkk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ueqv2"]
 animations = [{
@@ -16,9 +16,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Curve" id="Curve_os7b0"]
-_data = [Vector2(0.00441501, 0.0181818), 0.0, 0.0, 0, 0, Vector2(1, 0.963636), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_484nc"]
+emission_shape = 1
+emission_sphere_radius = 128.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(1, 1, 1, 0.360784)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d52qj"]
+load_path = "res://.godot/imported/rond.png-b8849ff709c839aa001162950983cab2.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h82p5"]
 radius = 165.076
@@ -26,6 +34,7 @@ radius = 165.076
 [node name="Room" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_1r48m")
+metadata/_edit_horizontal_guides_ = [-527.0, -5677.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_iieip")
@@ -35,17 +44,15 @@ position = Vector2(0, 5)
 scale = Vector2(3.57432, 3.57432)
 sprite_frames = SubResource("SpriteFrames_ueqv2")
 
-[node name="Trail" type="Line2D" parent="AnimatedSprite2D"]
-show_behind_parent = true
-light_mask = 262207
-visibility_layer = 131073
-z_as_relative = false
-scale = Vector2(0.279773, 0.279773)
-width_curve = SubResource("Curve_os7b0")
-default_color = Color(0.360784, 0, 0.447059, 1)
-joint_mode = 2
-sharp_limit = 10.0
-script = ExtResource("3_ib80f")
+[node name="New_trail" type="GPUParticles2D" parent="AnimatedSprite2D"]
+z_index = -1
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_484nc")
+texture = SubResource("CompressedTexture2D_d52qj")
+trail_lifetime = 1.91
+script = ExtResource("5_ogwkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h82p5")
