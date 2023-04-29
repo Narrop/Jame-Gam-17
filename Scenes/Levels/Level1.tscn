@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqw54dw3n3uvw"]
+
+[ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
+[ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
+[ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
+[ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
+[ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="5_isagw"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(52, -37)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(47, -208)
+texture = ExtResource("1_q8rh6")
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 720)
+
+[node name="SpawnGround" parent="." instance=ExtResource("2_hrjb1")]
+
+[node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
+position = Vector2(-272, -252)
+
+[node name="Player" parent="." instance=ExtResource("4_h4px6")]
+position = Vector2(38, -144)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-41, -109)
+zoom = Vector2(1.3, 1.3)
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="Timer" type="Timer" parent="Player/Camera2D/CanvasLayer"]
+autostart = true
+
+[node name="Score" type="Label" parent="Player/Camera2D/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -155.0
+offset_bottom = 23.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Score : 0"
+script = ExtResource("5_isagw")
+
+[connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer" to="Player/Camera2D/CanvasLayer/Score" method="_on_timer_timeout"]
