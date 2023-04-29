@@ -16,6 +16,8 @@ var scenesList = [
 	preload("res://Scenes/Levels/Grounds/Ground5.tscn")
 ]	
 
+var coin = preload("res://Scenes/Levels/Coin.tscn")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if spawn_position.distance_to(player.global_position) < 1000:
@@ -34,5 +36,11 @@ func spawn_ground():
 	var spawn_ground_instance = random_ground.instantiate()
 	add_child(spawn_ground_instance)
 	spawn_ground_instance.position.x = spawn_position.x
-	#spawn_ground_instance.position.x = spawn_position.x
+	
+	# Spawn a coin if you get lucky
+	if rng.randf() > .8:
+		var coin_instance = coin.instantiate()
+		spawn_ground_instance.add_child(coin_instance)
+	
+	# Increment spawn position for the next one
 	spawn_position.x = spawn_position.x + GROUNDWIDTH

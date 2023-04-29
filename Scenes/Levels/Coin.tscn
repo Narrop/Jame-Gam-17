@@ -1,12 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2acg1m43avb1"]
+[gd_scene load_steps=8 format=3 uid="uid://b88m0b4vkpw0t"]
 
-[ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
-[ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
-[ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
-[ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
-[ext_resource type="Script" path="res://Scenes/Levels/Coin.gd" id="5_gf5qu"]
-[ext_resource type="Script" path="res://Scenes/Levels/Score.gd" id="5_phabn"]
-[ext_resource type="Texture2D" uid="uid://dd0sppvxrxoob" path="res://Asset/coins.png" id="5_y5usf"]
+[ext_resource type="Script" path="res://Scenes/Levels/Coin.gd" id="1_hvpvt"]
+[ext_resource type="Texture2D" uid="uid://dd0sppvxrxoob" path="res://Asset/coins.png" id="2_4qkuw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2xup"]
 
@@ -173,70 +168,22 @@ _data = {
 "took": SubResource("Animation_i8vbj")
 }
 
-[node name="Level1" type="Node2D"]
-position = Vector2(52, -37)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1280, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_repeat = 2
-position = Vector2(47, -208)
-texture = ExtResource("1_q8rh6")
-region_enabled = true
-region_rect = Rect2(0, 0, 2560, 720)
-
-[node name="SpawnGround" parent="." instance=ExtResource("2_hrjb1")]
-
-[node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
-position = Vector2(-272, -252)
-
-[node name="Player" parent="." instance=ExtResource("4_h4px6")]
-position = Vector2(38, -144)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-41, -109)
-zoom = Vector2(1.3, 1.3)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
-[node name="Label" type="Label" parent="Player/Camera2D"]
-offset_left = 338.0
-offset_top = -274.0
-offset_right = 404.0
-offset_bottom = -246.0
-text = "SCORE :"
-
-[node name="Score" type="Label" parent="Player/Camera2D"]
-offset_left = 398.0
-offset_top = -272.0
-offset_right = 484.0
-offset_bottom = -249.0
-script = ExtResource("5_phabn")
-
-[node name="Coin" type="Area2D" parent="."]
+[node name="Coin" type="Area2D"]
 position = Vector2(220, -131)
-script = ExtResource("5_gf5qu")
+script = ExtResource("1_hvpvt")
 
-[node name="Sprite2D" type="Sprite2D" parent="Coin"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -19)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_y5usf")
+texture = ExtResource("2_4qkuw")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_r2xup")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Coin"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_bdi5c")
 }
-
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Timer" to="Player/Camera2D/Score" method="increment_score"]
