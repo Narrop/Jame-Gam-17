@@ -10,7 +10,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var sprite = $AnimatedSprite2D
 
+@onready var timer = $Timer
+
 var hurt = false
+
+var slowing: int = 0
 
 func _physics_process(delta):
 	
@@ -25,7 +29,7 @@ func _physics_process(delta):
 	# If we are in runner mode, player runs in auto and can only jump
 	if state == 0:
 		if is_on_floor():
-			velocity.x = SPEED
+			velocity.x = SPEED - slowing
 			sprite.play("Walking")
 			sprite.flip_h = false
 	else:
@@ -42,9 +46,9 @@ func _physics_process(delta):
 			sprite.play("Idle")
 			
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * (SPEED - slowing)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED - slowing)
 	
 	# Jumping works on every state
 	if not is_on_floor():
@@ -55,8 +59,17 @@ func _physics_process(delta):
 	if position.y >= 0:
 		get_tree().reload_current_scene()
 	
+	if hurt == true and slowing > 0 :
+		sprite.play("Hurt")
+		if timer.timeout:
+			slowing -= 1
+			timer.start()
+	
+	print(slowing, "prout")
+	
 	move_and_slide()
 
 
 func _on_area_2d_area_entered(area):
 	hurt = true
+	slowing = 50
