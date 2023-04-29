@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://n75v5mci44ws"]
+[gd_scene load_steps=3 format=3 uid="uid://n75v5mci44ws"]
 
 [ext_resource type="Script" path="res://Scenes/menu/Menu.gd" id="1_bpt5c"]
+
+[sub_resource type="GDScript" id="GDScript_ahkmr"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	var error = get_tree().change_scene_to_file(\"res://scenes/Levels/Level\"+ str(Global.key_num + 1)+\".tscn\")
+	if (error != OK):
+		print('don\\'t work');
+"
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_bpt5c")
@@ -8,3 +28,22 @@ script = ExtResource("1_bpt5c")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 893.0
 offset_bottom = 434.0
+
+[node name="Button_play" type="Button" parent="."]
+offset_left = 361.0
+offset_top = 228.0
+offset_right = 470.0
+offset_bottom = 271.0
+text = "Play"
+script = SubResource("GDScript_ahkmr")
+
+[node name="Button_crédit" type="Button" parent="."]
+offset_left = 361.0
+offset_top = 160.0
+offset_right = 470.0
+offset_bottom = 203.0
+text = "Crédit"
+script = SubResource("GDScript_ahkmr")
+
+[connection signal="pressed" from="Button_play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_crédit" to="." method="_on_button_crdit_pressed"]
