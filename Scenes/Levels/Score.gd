@@ -1,14 +1,12 @@
 extends Label
 
 var score = 0
-var timer = Timer.new()
+@onready var timer = $Timer
 
 func _ready():
 	# configure le timer pour appeler la fonction increment_score toutes les secondes
-	timer.set_wait_time(1.0)
-	timer.set_one_shot(false)
-	timer.connect("timeout", self, "increment_score")
-	timer.start()
+	$Timer.start()
+
 
 func increment_score():
 	score += 1
