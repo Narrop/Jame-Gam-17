@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4wbexkerntwa"]
+[gd_scene load_steps=23 format=3 uid="uid://c4wbexkerntwa"]
 
 [ext_resource type="Texture2D" uid="uid://d3kh3wxr7oowu" path="res://Asset/Perso.png" id="1_dfats"]
 [ext_resource type="Script" path="res://Scenes/Actors/Player.gd" id="1_ibu8m"]
@@ -137,6 +137,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwsf1"]
 height = 42.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvnwu"]
+height = 42.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ibu8m")
 
@@ -150,3 +153,13 @@ offset = Vector2(-32, -32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_dwsf1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_tvnwu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
