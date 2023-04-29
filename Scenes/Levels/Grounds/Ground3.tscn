@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgom687k4n5wy"]
+
+[ext_resource type="PackedScene" uid="uid://j3yf066x6p6u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="1_bdcpc"]
+[ext_resource type="Script" path="res://Scenes/Levels/Grounds/Ground.gd" id="1_svdps"]
+
+[node name="Ground3" type="Node2D"]
+script = ExtResource("1_svdps")
+
+[node name="Ground2" parent="." instance=ExtResource("1_bdcpc")]
+position = Vector2(1, 0)
+
+[node name="Ground3" parent="." instance=ExtResource("1_bdcpc")]
+position = Vector2(128, 0)
