@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7s1yondpwfrc"]
+[gd_scene load_steps=4 format=3 uid="uid://b7s1yondpwfrc"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Grounds/Ground.gd" id="1_sshmb"]
 [ext_resource type="PackedScene" uid="uid://j3yf066x6p6u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_sg18i"]
+[ext_resource type="PackedScene" uid="uid://cuhnln6256sgu" path="res://Scenes/Levels/Grounds/Ground_spike.tscn" id="3_8riq0"]
 
 [node name="Ground1" type="Node2D"]
 script = ExtResource("1_sshmb")
@@ -9,8 +10,8 @@ script = ExtResource("1_sshmb")
 [node name="Ground" parent="." instance=ExtResource("2_sg18i")]
 position = Vector2(-126, 0)
 
-[node name="Ground2" parent="." instance=ExtResource("2_sg18i")]
-position = Vector2(1, 0)
-
 [node name="Ground3" parent="." instance=ExtResource("2_sg18i")]
 position = Vector2(128, 0)
+
+[node name="Ground4" parent="." instance=ExtResource("3_8riq0")]
+position = Vector2(1, 0)
