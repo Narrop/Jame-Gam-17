@@ -30,20 +30,24 @@ func _physics_process(delta):
 	if state == 0:
 		if is_on_floor():
 			velocity.x = SPEED - slowing
-			sprite.play("Walking")
+			if slowing < 0 :
+				sprite.play("Walking")
 			sprite.flip_h = false
 	else:
 		# In fight mode, player can be controlled in every direction
 		var direction = Input.get_axis("ui_left", "ui_right")
 
 		if direction < 0:
-			sprite.play("Walking")
+			if slowing < 0 :
+				sprite.play("Walking")
 			sprite.flip_h = true
 		elif direction > 0:
-			sprite.play("Walking")
+			if slowing < 0 :
+				sprite.play("Walking")
 			sprite.flip_h = false
 		elif is_on_floor() and direction == 0:
-			sprite.play("Idle")
+			if slowing < 0 :
+				sprite.play("Idle")
 			
 		if direction:
 			velocity.x = direction * (SPEED - slowing)
@@ -53,23 +57,24 @@ func _physics_process(delta):
 	# Jumping works on every state
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		sprite.play("Jumping")	
+		if slowing < 0 :
+			sprite.play("Jumping")	
 
 	# Loose if falling
 	if position.y >= 0:
 		get_tree().reload_current_scene()
 	
-	if hurt == true and slowing > 0 :
+	if slowing > 0 :
 		sprite.play("Hurt")
 		if timer.timeout:
 			slowing -= 1
 			timer.start()
 	
-	print(slowing, "prout")
+	print("prout")
 	
 	move_and_slide()
 
 
 func _on_area_2d_area_entered(area):
 	hurt = true
-	slowing = 50
+	slowing = 30
