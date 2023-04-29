@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
-[ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
+[ext_resource type="PackedScene" uid="uid://x0gnxdvqyb3o" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(52, -37)
@@ -25,8 +25,8 @@ region_rect = Rect2(0, 0, 2560, 720)
 [node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
 position = Vector2(-272, -252)
 
-[node name="Player" parent="." instance=ExtResource("3_2htcg")]
-position = Vector2(-5, -95)
+[node name="Player" parent="." instance=ExtResource("4_h4px6")]
+position = Vector2(38, -144)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-41, -109)
