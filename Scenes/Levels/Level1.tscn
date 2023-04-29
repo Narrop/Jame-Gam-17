@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkb3cumlejraj"]
+[gd_scene load_steps=6 format=3 uid="uid://d2acg1m43avb1"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
-[ext_resource type="PackedScene" uid="uid://b42aej1ww3h7u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_2ym4r"]
+[ext_resource type="PackedScene" uid="uid://j3yf066x6p6u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_2ym4r"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
 [ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
@@ -12,16 +12,14 @@ position = Vector2(52, -37)
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(52, -37)
-motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1280, 0)
 
-[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(-51, 35)
-scale = Vector2(1.40807, 1.40807)
+position = Vector2(47, -208)
 texture = ExtResource("1_q8rh6")
 region_enabled = true
-region_rect = Rect2(0, 0, 3176, 446)
+region_rect = Rect2(0, 0, 2560, 720)
 
 [node name="SpawnGround" parent="." instance=ExtResource("2_hrjb1")]
 
@@ -32,7 +30,7 @@ script = null
 position = Vector2(-249, -259)
 
 [node name="Player" parent="." instance=ExtResource("3_2htcg")]
-position = Vector2(-5, -141)
+position = Vector2(-5, -95)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
