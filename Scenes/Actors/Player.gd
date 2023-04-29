@@ -62,8 +62,6 @@ func _physics_process(delta):
 	elif is_on_floor() and direction == 0:
 		sprite.play("Idle")
 	
-	print("test")
-	
 	move_and_slide()
 
 
