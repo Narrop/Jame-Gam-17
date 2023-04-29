@@ -6,9 +6,6 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
- 
-var _is_falling = true
-
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -44,5 +41,9 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Loose if falling
+	if position.y >= 0:
+		get_tree().change_scene_to_file("res://Scenes/menu/Menu.tscn")
 	
 	move_and_slide()
