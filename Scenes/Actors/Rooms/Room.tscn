@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3ajfl1lgssbo"]
+[gd_scene load_steps=7 format=3 uid="uid://b3ajfl1lgssbo"]
 
 [ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_iieip"]
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_nijwl"]
@@ -15,6 +15,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_os7b0"]
+_data = [Vector2(0.00441501, 0.0181818), 0.0, 0.0, 0, 0, Vector2(1, 0.963636), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_h82p5"]
 radius = 165.076
 
@@ -29,11 +33,15 @@ scale = Vector2(3.57432, 3.57432)
 sprite_frames = SubResource("SpriteFrames_ueqv2")
 
 [node name="Trail" type="Line2D" parent="AnimatedSprite2D"]
-position = Vector2(0, -1.39887)
+show_behind_parent = true
+light_mask = 262207
+visibility_layer = 131073
+z_as_relative = false
 scale = Vector2(0.279773, 0.279773)
-points = PackedVector2Array(0, 0)
-width = 60.0
+width_curve = SubResource("Curve_os7b0")
 default_color = Color(0.360784, 0, 0.447059, 1)
+joint_mode = 2
+sharp_limit = 10.0
 script = ExtResource("3_ib80f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
