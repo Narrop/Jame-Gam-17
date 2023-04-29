@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2acg1m43avb1"]
+[gd_scene load_steps=5 format=3 uid="uid://d2acg1m43avb1"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
 [ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
-[ext_resource type="PackedScene" uid="uid://b88m0b4vkpw0t" path="res://Scenes/Levels/Coin.tscn" id="5_fpxvr"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(52, -37)
@@ -34,5 +33,3 @@ position = Vector2(-41, -109)
 zoom = Vector2(1.3, 1.3)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
-
-[node name="Coin" parent="." instance=ExtResource("5_fpxvr")]
