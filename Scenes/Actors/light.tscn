@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://uutwyugdp1uo"]
+[gd_scene load_steps=3 format=3 uid="uid://uutwyugdp1uo"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsmhr"]
 emission_shape = 1
@@ -9,17 +9,13 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 color = Color(1, 1, 1, 0.360784)
 
-[sub_resource type="Gradient" id="Gradient_abnrk"]
-offsets = PackedFloat32Array(0, 0.0772947, 0.478261, 0.640097, 0.741546, 0.785024, 0.869565, 0.939614, 0.978261, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.0217391, 0.0217391, 0.0217391, 1, 0.448298, 0.448298, 0.448298, 1, 0.620463, 0.620463, 0.620463, 1, 0.728388, 0.728388, 0.728388, 1, 0.774641, 0.774641, 0.774641, 1, 0.861712, 0.861712, 0.861712, 1, 0.935978, 0.935978, 0.935978, 1, 0.976952, 0.976952, 0.976952, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7vqrs"]
-gradient = SubResource("Gradient_abnrk")
-width = 1
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sen0h"]
+load_path = "res://.godot/imported/rond.png-b8849ff709c839aa001162950983cab2.ctex"
 
 [node name="light" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="New_trail" type="GPUParticles2D" parent="."]
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_qsmhr")
-texture = SubResource("GradientTexture1D_7vqrs")
+texture = SubResource("CompressedTexture2D_sen0h")
+trail_lifetime = 1.91
