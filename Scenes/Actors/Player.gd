@@ -66,9 +66,7 @@ func _physics_process(delta):
 	
 	if slowing > 0 :
 		sprite.play("Hurt")
-		if timer.timeout:
-			slowing -= 1
-			timer.start()
+		slowing = slowing - 1
 	
 	print("prout")
 	
