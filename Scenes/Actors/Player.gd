@@ -11,6 +11,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
+	# Handle Reste
+	if Input.is_action_just_pressed("level_reset"):
+		get_tree().reload_current_scene()
+	
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -41,6 +45,6 @@ func _physics_process(delta):
 	
 	# Loose if falling
 	if position.y >= 0:
-		get_tree().change_scene_to_file("res://Scenes/menu/Menu.tscn")
+		get_tree().reload_current_scene()
 	
 	move_and_slide()
