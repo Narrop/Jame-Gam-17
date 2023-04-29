@@ -12,7 +12,8 @@ var scenesList = [
 	preload("res://Scenes/Levels/Grounds/Ground1.tscn"),
 	preload("res://Scenes/Levels/Grounds/Ground2.tscn"),
 	preload("res://Scenes/Levels/Grounds/Ground3.tscn"),
-	preload("res://Scenes/Levels/Grounds/Ground4.tscn")
+	preload("res://Scenes/Levels/Grounds/Ground4.tscn"),
+	preload("res://Scenes/Levels/Grounds/Ground5.tscn")
 ]	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
