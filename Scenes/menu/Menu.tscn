@@ -1,27 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://n75v5mci44ws"]
+[gd_scene load_steps=3 format=3 uid="uid://n75v5mci44ws"]
 
-[ext_resource type="Script" path="res://Scenes/menu/Menu.gd" id="1_bpt5c"]
+[ext_resource type="Script" path="res://Scenes/menu/Menu.gd" id="1_aup6b"]
+[ext_resource type="AudioStream" uid="uid://bw1q72c4iyrwu" path="res://Asset/skaiwater-emo-arpeggiated-guitar-synth-lead-melody_148bpm_C#_minor.wav" id="2_3qpee"]
 
 [node name="Menu" type="Node2D"]
-script = ExtResource("1_bpt5c")
+script = ExtResource("1_aup6b")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 893.0
-offset_bottom = 434.0
+offset_right = 1149.0
+offset_bottom = 642.0
 
 [node name="Button_play" type="Button" parent="."]
-offset_left = 361.0
-offset_top = 228.0
-offset_right = 470.0
-offset_bottom = 271.0
+offset_left = 470.0
+offset_top = 238.0
+offset_right = 579.0
+offset_bottom = 281.0
 text = "Play"
 
 [node name="Button_crédit" type="Button" parent="."]
-offset_left = 361.0
-offset_top = 160.0
-offset_right = 470.0
-offset_bottom = 203.0
+offset_left = 470.0
+offset_top = 315.0
+offset_right = 579.0
+offset_bottom = 358.0
 text = "Crédit"
+
+[node name="Button_sound" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 129.0
+offset_bottom = 60.0
+text = "Sound on"
+
+[node name="Menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3qpee")
 
 [connection signal="pressed" from="Button_play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button_crédit" to="." method="_on_button_crdit_pressed"]
+[connection signal="pressed" from="Button_sound" to="." method="_on_button_sound_pressed"]
