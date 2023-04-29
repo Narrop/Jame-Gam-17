@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2acg1m43avb1"]
+[gd_scene load_steps=13 format=3 uid="uid://d2acg1m43avb1"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
 [ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
 [ext_resource type="Script" path="res://Scenes/Levels/Coin.gd" id="5_gf5qu"]
+[ext_resource type="Script" path="res://Scenes/Levels/Score.gd" id="5_phabn"]
 [ext_resource type="Texture2D" uid="uid://dd0sppvxrxoob" path="res://Asset/coins.png" id="5_y5usf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2xup"]
@@ -199,7 +200,22 @@ position = Vector2(38, -144)
 position = Vector2(-41, -109)
 zoom = Vector2(1.3, 1.3)
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Label" type="Label" parent="Player/Camera2D"]
+offset_left = 338.0
+offset_top = -274.0
+offset_right = 404.0
+offset_bottom = -246.0
+text = "SCORE :"
+
+[node name="Score" type="Label" parent="Player/Camera2D"]
+offset_left = 398.0
+offset_top = -272.0
+offset_right = 484.0
+offset_bottom = -249.0
+script = ExtResource("5_phabn")
 
 [node name="Coin" type="Area2D" parent="."]
 position = Vector2(220, -131)
