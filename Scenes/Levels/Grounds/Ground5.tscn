@@ -16,3 +16,4 @@ position = Vector2(128, 0)
 [node name="Ground4" parent="." instance=ExtResource("3_8riq0")]
 position = Vector2(1, 0)
 script = null
+metadata/_edit_group_ = true
