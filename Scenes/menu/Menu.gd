@@ -25,7 +25,7 @@ func _on_button_crdit_pressed():
 
 func _on_button_sound_pressed():
 	if ($Button_sound.text in "Sound off"): 
-		$Button_sound.text = "Sound on"
+		$Button_sound.text = "Sound on"	
 		$Menu_music.play();
 	elif  ($Button_sound.text in "Sound on"): 	
 		$Button_sound.text = "Sound off"

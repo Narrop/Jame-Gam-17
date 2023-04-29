@@ -28,12 +28,9 @@ texture = ExtResource("2_omvfj")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_3l2xp")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_2d2h8")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("6_jlfsf")
 }, {
 "duration": 1.0,
@@ -62,6 +59,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_u3xii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3l2xp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("16_pnbhk")
@@ -182,6 +182,7 @@ scale = Vector2(0.47168, 0.216797)
 sprite_frames = SubResource("SpriteFrames_gfd8a")
 animation = &"WIND"
 autoplay = "WIND"
+frame = 5
 
 [node name="Wind2" type="AnimatedSprite2D" parent="."]
 position = Vector2(1087, 514)

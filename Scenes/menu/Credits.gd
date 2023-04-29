@@ -23,30 +23,30 @@ var credits = [
 		"A game by FOO"
 	],
 	[
-		"Programming",
+		"PROGAMING",
 		"Marie",
 		"Badr",
 		"Rémi"
 	],
 	[
-		"Art",
+		"ART",
 		"Badr",
 		"Marie",
 		"Stolen from the internet"
 	],[
-		"Music",
+		"MUSIC",
 		"Marie",
 		"Stolen from the internet"
 	],
 	[
-		"Tools used",
+		"TOOLS USED",
 		"Developed with Godot Engine 4",
 		"https://godotengine.org/license",
 		"",
 		"Art created with ???",
 		"link"
 	], [
-		"Special thanks",
+		"SPECIAL THANKS",
 		"Le A"
 	]
 ]
@@ -93,7 +93,7 @@ func add_line():
 	if curr_line == 0:
 		# Put the title in another color
 		var settings = new_line.label_settings.duplicate()
-		settings.font_color = Color.BLUE_VIOLET
+		settings.font_color = Color.DARK_GOLDENROD
 		new_line.label_settings = settings
 	$CreditsContainer.add_child(new_line)
 	
