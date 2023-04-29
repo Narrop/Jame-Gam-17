@@ -68,8 +68,6 @@ func _physics_process(delta):
 		sprite.play("Hurt")
 		slowing = slowing - 1
 	
-	print("prout")
-	
 	move_and_slide()
 
 
