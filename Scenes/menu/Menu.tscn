@@ -14,12 +14,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_pressed():
-	var error = get_tree().change_scene_to_file(\"res://scenes/Levels/Level\"+ str(Global.key_num + 1)+\".tscn\")
-	if (error != OK):
-		print('don\\'t work');
 "
 
 [node name="Menu" type="Node2D"]
