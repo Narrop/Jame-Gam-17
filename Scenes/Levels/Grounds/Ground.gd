@@ -6,7 +6,7 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _process(_delta):
 	# Delete the hidden ground
 	if global_position.distance_to(player.global_position) > 1000 and player.global_position.x > global_position.x:
 		queue_free()
