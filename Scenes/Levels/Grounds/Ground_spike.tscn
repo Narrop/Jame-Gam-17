@@ -7,8 +7,8 @@
 size = Vector2(127, 127)
 
 [node name="Ground" type="StaticBody2D"]
+position = Vector2(1, 1)
 script = ExtResource("1_4ml48")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hdwci")
