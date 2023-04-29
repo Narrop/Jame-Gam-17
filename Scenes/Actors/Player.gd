@@ -21,27 +21,31 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+#	var direction = Input.get_axis("ui_left", "ui_right")
+#
+#	if direction < 0:
+#		sprite.play("Walking")
+#		sprite.flip_h = true
+#	elif direction > 0:
+#		sprite.play("Walking")
+#		sprite.flip_h = false
+#	elif is_on_floor() and direction == 0:
+#		sprite.play("Idle")
 
-	if direction < 0:
-		sprite.play("Walking")
-		sprite.flip_h = true
-	elif direction > 0:
-		sprite.play("Walking")
-		sprite.flip_h = false
-	elif is_on_floor() and direction == 0:
-		sprite.play("Idle")
-	
 	
 	# Add the gravity.
-	if not is_on_floor():
+	if is_on_floor():
+		velocity.x = SPEED
+		sprite.play("Walking")
+		sprite.flip_h = false
+	else:
 		velocity.y += gravity * delta
 		sprite.play("Jumping")
 	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+#	if direction:
+#		velocity.x = direction * SPEED
+#	else:
+#		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	# Loose if falling
 	if position.y >= 0:
