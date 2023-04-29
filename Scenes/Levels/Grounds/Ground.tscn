@@ -9,6 +9,7 @@ size = Vector2(124.363, 136)
 [node name="Ground" type="Sprite2D"]
 texture = ExtResource("2_vw1cj")
 script = ExtResource("2_fpbg7")
+metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
