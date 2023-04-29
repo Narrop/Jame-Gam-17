@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b42aej1ww3h7u"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Grounds/Ground.gd" id="2_fpbg7"]
+[ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="2_vw1cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqf4a"]
+size = Vector2(124.363, 136)
+
+[node name="Ground" type="Sprite2D"]
+texture = ExtResource("2_vw1cj")
+script = ExtResource("2_fpbg7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.181675, -4)
+shape = SubResource("RectangleShape2D_nqf4a")
