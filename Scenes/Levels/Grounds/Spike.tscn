@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bnqawafalqpm1" path="res://Asset/Lego_spike.png" id="1_7fuop"]
 
 [node name="Spike" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7fuop")
