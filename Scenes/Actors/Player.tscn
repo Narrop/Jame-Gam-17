@@ -138,7 +138,6 @@ animations = [{
 height = 42.0
 
 [node name="Player" type="CharacterBody2D"]
-safe_margin = 0.001
 script = ExtResource("1_ibu8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

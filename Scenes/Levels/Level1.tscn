@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2acg1m43avb1"]
+[gd_scene load_steps=6 format=3 uid="uid://dkb3cumlejraj"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
-[ext_resource type="PackedScene" uid="uid://j3yf066x6p6u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_2ym4r"]
+[ext_resource type="PackedScene" uid="uid://b42aej1ww3h7u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_2ym4r"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
 [ext_resource type="PackedScene" uid="uid://dn1wlpxm7cqai" path="res://Scenes/Actors/Rooms/Bedroom.tscn" id="2_sl6ss"]
 [ext_resource type="PackedScene" uid="uid://c4wbexkerntwa" path="res://Scenes/Actors/Player.tscn" id="3_2htcg"]
