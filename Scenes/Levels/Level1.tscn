@@ -236,3 +236,7 @@ autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_bdi5c")
 }
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="Player/Camera2D/Score" method="increment_score"]
