@@ -13,6 +13,8 @@ metadata/_edit_group_ = true
 texture = ExtResource("1_524bc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(-0.71429, -15.7143)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dlt8w")
