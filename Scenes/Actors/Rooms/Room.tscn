@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3ajfl1lgssbo"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ajfl1lgssbo"]
 
 [ext_resource type="Script" path="res://Scenes/Actors/Rooms/Room.gd" id="1_1r48m"]
 [ext_resource type="Texture2D" uid="uid://bmlwchj7e4ea8" path="res://Asset/Bedroom.png" id="1_iieip"]
 [ext_resource type="Texture2D" uid="uid://b4itr2dh2fl3x" path="res://Asset/Bulle.png" id="2_nijwl"]
-[ext_resource type="Script" path="res://Scenes/Actors/Rooms/New_trail.gd" id="5_ogwkk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ueqv2"]
 animations = [{
@@ -26,7 +25,6 @@ orbit_velocity_max = 0.0
 color = Color(1, 1, 1, 0.360784)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d52qj"]
-load_path = "res://.godot/imported/rond.png-b8849ff709c839aa001162950983cab2.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h82p5"]
 radius = 165.076
@@ -52,7 +50,6 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_484nc")
 texture = SubResource("CompressedTexture2D_d52qj")
 trail_lifetime = 1.91
-script = ExtResource("5_ogwkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h82p5")

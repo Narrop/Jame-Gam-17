@@ -10,7 +10,7 @@ func _ready():
 func _on_trigger_player_entered():
 	player.play('active')
 	
-func close():
+func close(_p):
 	if player.get_current_animation() == "active":
 		player.play('closed')
 		emit_signal("isClosed")

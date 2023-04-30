@@ -7,13 +7,12 @@ func _ready():
 	self.connect("PlayerEntered", Callable(player, "_on_player_entered"))
 	
 	var room = get_parent().get_parent().find_child("*room")
-	self.connect("PlayerEntered", Callable(player, "_on_player_entered"))
+	self.connect("PlayerEntered", Callable(room, "_on_player_entered"))
 		
 
 func _physics_process(_delta):
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
-			print("triggered")
 			emit_signal("PlayerEntered")
 			queue_free()
