@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	var error = get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
+	var error = get_tree().change_scene_to_file("res://Game.tscn")
 	if (error != OK):
 		print('don\'t work');
 

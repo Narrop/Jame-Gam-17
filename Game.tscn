@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3arllnwt3wyv"]
+
+[ext_resource type="PackedScene" uid="uid://dqw54dw3n3uvw" path="res://Scenes/Levels/Level1.tscn" id="1_2qaws"]
+[ext_resource type="Script" path="res://Game.gd" id="1_4n7rx"]
+[ext_resource type="Script" path="res://Scenes/Levels/PauseMenu.gd" id="3_kh5w1"]
+
+[node name="Game" type="Node"]
+process_mode = 3
+script = ExtResource("1_4n7rx")
+
+[node name="Level1" parent="." instance=ExtResource("1_2qaws")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("game")]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_kh5w1")
+game = NodePath("../..")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -104.0
+offset_right = 264.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "= PAUSE ="
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="CanvasLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Options" type="Button" parent="CanvasLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Main Menu" type="Button" parent="CanvasLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Panel/VBoxContainer/Resume" to="CanvasLayer/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Panel/VBoxContainer/Restart" to="CanvasLayer/PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Panel/VBoxContainer/Main Menu" to="CanvasLayer/PauseMenu" method="_on_main_menu_pressed"]

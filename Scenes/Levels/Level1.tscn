@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2acg1m43avb1"]
+[gd_scene load_steps=7 format=3 uid="uid://dqw54dw3n3uvw"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Gold_counter.gd" id="6_ot6ai"]
 
 [node name="Level1" type="Node2D"]
+process_mode = 1
 position = Vector2(52, -37)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
