@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvqp21x20sjav"]
+[gd_scene load_steps=8 format=3 uid="uid://dvqp21x20sjav"]
 
 [ext_resource type="Texture2D" uid="uid://jmwuk2aes7ip" path="res://Asset/background.png" id="1_q8rh6"]
 [ext_resource type="PackedScene" uid="uid://bpookyle8p67r" path="res://Scenes/Levels/SpawnGround.tscn" id="2_hrjb1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="4_h4px6"]
 [ext_resource type="Script" path="res://Scenes/Levels/OnScreenScore.gd" id="5_vf0xk"]
 [ext_resource type="Script" path="res://Scenes/Levels/Gold_counter.gd" id="6_ot6ai"]
+[ext_resource type="Script" path="res://Scenes/Levels/Hammer_counter.gd" id="7_o5bpi"]
 
 [node name="Level1" type="Node2D"]
 process_mode = 1
@@ -66,5 +67,14 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Gold : 0"
 script = ExtResource("6_ot6ai")
+
+[node name="Hammer_counter" type="Control" parent="Player/Camera2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1136.0
+offset_top = 64.0
+offset_right = 1176.0
+offset_bottom = 104.0
+script = ExtResource("7_o5bpi")
 
 [connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer" to="Player/Camera2D/CanvasLayer/Score" method="_on_timer_timeout"]

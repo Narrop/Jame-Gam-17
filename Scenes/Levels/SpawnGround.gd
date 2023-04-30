@@ -24,7 +24,6 @@ var arena_spawned = false
 
 func _process(_delta):
 	if not arena_spawned:
-		print(PlayerVariable.hammers)
 		if PlayerVariable.hammers == 3:
 			spawn_arena()
 		else:
