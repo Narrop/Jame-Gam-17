@@ -30,11 +30,15 @@ color = Color(1, 1, 1, 0.360784)
 radius = 165.076
 
 [node name="Room" type="CharacterBody2D"]
+light_mask = 0
+visibility_layer = 0
 motion_mode = 1
 script = ExtResource("1_1r48m")
 metadata/_edit_horizontal_guides_ = [-527.0, -5677.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
 texture = ExtResource("1_iieip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -52,4 +56,18 @@ texture = SubResource("CompressedTexture2D_d52qj")
 trail_lifetime = 1.91
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
 shape = SubResource("CircleShape2D_h82p5")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 4
+visibility_layer = 4
+shape = SubResource("CircleShape2D_h82p5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
