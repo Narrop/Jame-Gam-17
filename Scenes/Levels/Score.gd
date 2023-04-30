@@ -9,6 +9,6 @@ func _ready():
 
 
 func increment_score():
-	score += 1
+	PlayerVariable.score += 1
 	var score_label = get_node("Score")
-	score_label.set_text("Score: " + str(score)) # met à jour le texte de l'étiquette avec le score
+	score_label.set_text("Score: " + str(PlayerVariable.score)) # met à jour le texte de l'étiquette avec le score

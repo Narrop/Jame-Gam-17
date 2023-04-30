@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var player = $AnimationPlayer
 
+
 func _ready():
 	player.connect("animation_finished", destroy)
 
@@ -11,7 +12,8 @@ func _physics_process(delta):
 	for body in bodies:
 		if body.name == "Player":
 			player.play('took')
-			get_node("/root/Level1/Player/Camera2D/CanvasLayer/Gold_counter").gold += 1
+			PlayerVariable.coin += 1
+			#get_node("/root/Level1/Player/Camera2D/CanvasLayer/Gold_counter").gold += 1
 		else:
 			player.play('idle')
 			
