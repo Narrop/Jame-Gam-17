@@ -13,7 +13,8 @@ var scenesList = [
 	preload("res://Scenes/Levels/Grounds/Ground2.tscn"),
 	preload("res://Scenes/Levels/Grounds/Ground3.tscn"),
 	preload("res://Scenes/Levels/Grounds/Ground4.tscn"),
-	preload("res://Scenes/Levels/Grounds/Ground5.tscn")
+	preload("res://Scenes/Levels/Grounds/Ground5.tscn"),
+	preload("res://Scenes/Levels/Grounds/Ground6.tscn")
 ]	
 
 var coin = preload("res://Scenes/Levels/Coin.tscn")
