@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqsg3edbjko2k"]
+
+[ext_resource type="TileSet" uid="uid://cfkeo4lpc1wn7" path="res://Tilesets/industrial.tres" id="1_xc7xo"]
+[ext_resource type="PackedScene" uid="uid://uelyevef32ev" path="res://Scenes/Levels/Arenas/Trigger.tscn" id="2_2p16d"]
+[ext_resource type="PackedScene" uid="uid://cb4fyptq70lvp" path="res://Scenes/Levels/Arenas/Door.tscn" id="3_7ogbp"]
+[ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="5_tr63h"]
+[ext_resource type="PackedScene" uid="uid://gpj82ra8i08d" path="res://Scenes/Levels/Grounds/Ground1.tscn" id="6_00nrg"]
+
+[node name="Arena" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 1)
+tile_set = ExtResource("1_xc7xo")
+cell_quadrant_size = 32
+collision_animatable = true
+format = 2
+layer_0/tile_data = PackedInt32Array(-65535, 65537, 0, -1, 65537, 0, -65533, 65537, 0, -65531, 65537, 0, -65529, 65537, 0, -65527, 65537, 0, -3, 65537, 0, -5, 65537, 0, -7, 65537, 0, -9, 65537, 0, -11, 65537, 0, -65525, 65537, 0, -655349, 196609, 2, -786421, 196609, 2, -917493, 196609, 2, -1048565, 196609, 2, -1048566, 196609, 2, -1048567, 196609, 2, -1048568, 196609, 2, -1048569, 196609, 2, -1048570, 196609, 2, -1048571, 196609, 2, -1048572, 196609, 2, -1048573, 196609, 2, -1048574, 196609, 2, -1048575, 196609, 2, -1048576, 196609, 2, -983041, 196609, 2, -983042, 196609, 2, -983043, 196609, 2, -983044, 196609, 2, -983045, 196609, 2, -983046, 196609, 2, -983047, 196609, 2, -983048, 196609, 2, -983049, 196609, 2, -983050, 196609, 2, -983051, 196609, 2, -524277, 196609, 2, -393205, 196609, 2)
+
+[node name="Trigger" parent="." instance=ExtResource("2_2p16d")]
+
+[node name="Door" parent="." instance=ExtResource("3_7ogbp")]
+
+[node name="Player" parent="." instance=ExtResource("5_tr63h")]
+position = Vector2(-354, -71)
+state = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Ground1" parent="." instance=ExtResource("6_00nrg")]
+position = Vector2(-375, 41)
+script = null
+
+[connection signal="PlayerEntered" from="Trigger" to="Door" method="_on_trigger_player_entered"]

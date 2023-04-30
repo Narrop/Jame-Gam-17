@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://cb4fyptq70lvp"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Arenas/Door.gd" id="1_etoha"]
+[ext_resource type="Texture2D" uid="uid://b0m2bjkeopkag" path="res://icon.svg" id="2_g38wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iaxm"]
+size = Vector2(22, 209)
+
+[sub_resource type="Animation" id="Animation_ujoyk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -68.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -68.5)]
+}
+
+[sub_resource type="Animation" id="Animation_2h8es"]
+resource_name = "active"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-10, -300), Vector2(-10, -68.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-10, -300), Vector2(-10, -68.5)]
+}
+
+[sub_resource type="Animation" id="Animation_7e7u3"]
+resource_name = "closed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -68.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -68.5)]
+}
+
+[sub_resource type="Animation" id="Animation_038g4"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -300)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1gl88"]
+_data = {
+"RESET": SubResource("Animation_ujoyk"),
+"active": SubResource("Animation_2h8es"),
+"closed": SubResource("Animation_7e7u3"),
+"idle": SubResource("Animation_038g4")
+}
+
+[node name="Door" type="StaticBody2D"]
+position = Vector2(-161, -58)
+script = ExtResource("1_etoha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, -68.25)
+scale = Vector2(0.164063, 1.63672)
+texture = ExtResource("2_g38wv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -68.5)
+shape = SubResource("RectangleShape2D_5iaxm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_1gl88")
+}

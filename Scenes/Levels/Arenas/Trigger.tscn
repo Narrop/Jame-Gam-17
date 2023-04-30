@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://uelyevef32ev"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Arenas/Trigger.gd" id="1_k3vqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo5kr"]
+size = Vector2(46, 69)
+
+[node name="Trigger" type="Area2D"]
+position = Vector2(-85, -57)
+script = ExtResource("1_k3vqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jo5kr")
