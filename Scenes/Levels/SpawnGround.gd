@@ -17,24 +17,19 @@ var scenesList = [
 ]	
 
 var coin = preload("res://Scenes/Levels/Coin.tscn")
+var hammer = preload("res://Scenes/Levels/Hammer.tscn")
 var arena = preload("res://Scenes/Levels/Arenas/Arena.tscn")
 
 var arena_spawned = false
-var time_start = 0
-var time_now = 0
-
-func _ready():
-	time_start = Time.get_ticks_msec()
 
 func _process(_delta):
 	if not arena_spawned:
-		if spawn_position.distance_to(player.global_position) < 1000:
-			time_now = Time.get_ticks_msec()
-			if time_now - time_start < 5000:
+		print(PlayerVariable.hammers)
+		if PlayerVariable.hammers == 3:
+			spawn_arena()
+		else:
+			if spawn_position.distance_to(player.global_position) < 1000:
 				spawn_ground()
-			else:
-				spawn_arena()
-
 	
 func spawn_ground():
 	# Randomly choose a ground type and instanciante it
@@ -50,9 +45,14 @@ func spawn_ground():
 	spawn_ground_instance.position.x = spawn_position.x
 	
 	# Spawn a coin if you get lucky
-	if rng.randf() > .8:
+	if rng.randf() > .5:
 		var coin_instance = coin.instantiate()
 		spawn_ground_instance.add_child(coin_instance)
+	else:
+		# Spawn a hammer if you are very
+		if rng.randf() > .7:
+			var hammer_instance = hammer.instantiate()
+			spawn_ground_instance.add_child(hammer_instance)
 	
 	# Increment spawn position for the next one
 	spawn_position.x += GROUNDWIDTH

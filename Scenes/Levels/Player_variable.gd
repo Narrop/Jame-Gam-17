@@ -2,14 +2,8 @@ extends Node
 
 var coin = 0
 var score = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var hammers = 0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-func get_coin():
-	return coin
+func reset():
+	score = 0
+	hammers = 0

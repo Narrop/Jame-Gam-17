@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3arllnwt3wyv"]
 
-[ext_resource type="PackedScene" uid="uid://dqw54dw3n3uvw" path="res://Scenes/Levels/Level1.tscn" id="1_2qaws"]
+[ext_resource type="PackedScene" uid="uid://dvqp21x20sjav" path="res://Scenes/Levels/Level1.tscn" id="1_2qaws"]
 [ext_resource type="Script" path="res://Game.gd" id="1_4n7rx"]
 [ext_resource type="Script" path="res://Scenes/Levels/PauseMenu.gd" id="3_kh5w1"]
 

@@ -1,7 +1,7 @@
 extends Label
 
-var score = 0
+@onready var player_vars = get_node("/root/PlayerVariable")
 
 func _on_timer_timeout():
-	score += 1
-	text = "Score: " + str(score) # met à jour le texte de l'étiquette avec le score
+	player_vars.score += 1
+	text = "Score: " + str(player_vars.score) # met à jour le texte de l'étiquette avec le score
