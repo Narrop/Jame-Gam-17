@@ -59,9 +59,10 @@ script = ExtResource("5_vf0xk")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -155.0
-offset_top = 26.0
-offset_bottom = 52.0
+offset_left = -154.0
+offset_top = 55.0
+offset_right = 1.0
+offset_bottom = 81.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -71,10 +72,10 @@ script = ExtResource("6_ot6ai")
 [node name="Hammer_counter" type="Control" parent="Player/Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1136.0
-offset_top = 64.0
-offset_right = 1176.0
-offset_bottom = 104.0
+offset_left = 1070.0
+offset_top = 29.0
+offset_right = 1110.0
+offset_bottom = 69.0
 script = ExtResource("7_o5bpi")
 
 [connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer" to="Player/Camera2D/CanvasLayer/Score" method="_on_timer_timeout"]
