@@ -68,3 +68,7 @@ func _physics_process(delta):
 func _on_area_2d_area_entered(area):
 	hurt = true
 	slowing = 30
+
+func _on_player_entered():
+	# Put the player in combat mode
+	state = 1

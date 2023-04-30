@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqsg3edbjko2k"]
+[gd_scene load_steps=5 format=3 uid="uid://bqsg3edbjko2k"]
 
 [ext_resource type="TileSet" uid="uid://cfkeo4lpc1wn7" path="res://Tilesets/industrial.tres" id="1_xc7xo"]
 [ext_resource type="PackedScene" uid="uid://uelyevef32ev" path="res://Scenes/Levels/Arenas/Trigger.tscn" id="2_2p16d"]
 [ext_resource type="PackedScene" uid="uid://cb4fyptq70lvp" path="res://Scenes/Levels/Arenas/Door.tscn" id="3_7ogbp"]
-[ext_resource type="PackedScene" uid="uid://cg7lwhptiyqpw" path="res://Scenes/Actors/Player.tscn" id="5_tr63h"]
 [ext_resource type="PackedScene" uid="uid://gpj82ra8i08d" path="res://Scenes/Levels/Grounds/Ground1.tscn" id="6_00nrg"]
 
 [node name="Arena" type="Node2D"]
@@ -19,12 +18,6 @@ layer_0/tile_data = PackedInt32Array(-65535, 65537, 0, -1, 65537, 0, -65533, 655
 [node name="Trigger" parent="." instance=ExtResource("2_2p16d")]
 
 [node name="Door" parent="." instance=ExtResource("3_7ogbp")]
-
-[node name="Player" parent="." instance=ExtResource("5_tr63h")]
-position = Vector2(-354, -71)
-state = 1
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Ground1" parent="." instance=ExtResource("6_00nrg")]
 position = Vector2(-375, 41)

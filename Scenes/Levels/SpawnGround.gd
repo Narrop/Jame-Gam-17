@@ -17,11 +17,23 @@ var scenesList = [
 ]	
 
 var coin = preload("res://Scenes/Levels/Coin.tscn")
+var arena = preload("res://Scenes/Levels/Arenas/Arena.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+var arena_spawned = false
+var time_start = 0
+var time_now = 0
+
+func _ready():
+	time_start = Time.get_ticks_msec()
+
 func _process(_delta):
-	if spawn_position.distance_to(player.global_position) < 1000:
-		spawn_ground()
+	if not arena_spawned:
+		if spawn_position.distance_to(player.global_position) < 1000:
+			time_now = Time.get_ticks_msec()
+			if time_now - time_start < 5000:
+				spawn_ground()
+			else:
+				spawn_arena()
 
 	
 func spawn_ground():
@@ -43,4 +55,11 @@ func spawn_ground():
 		spawn_ground_instance.add_child(coin_instance)
 	
 	# Increment spawn position for the next one
-	spawn_position.x = spawn_position.x + GROUNDWIDTH
+	spawn_position.x += GROUNDWIDTH
+
+func spawn_arena():
+	var spawn_arena_instance = arena.instantiate()
+	get_parent().add_child(spawn_arena_instance)
+	spawn_position.x += GROUNDWIDTH
+	spawn_arena_instance.position.x = spawn_position.x
+	arena_spawned = true
