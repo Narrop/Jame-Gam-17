@@ -175,6 +175,7 @@ text = "Sound on"
 
 [node name="Menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3qpee")
+volume_db = -10.576
 
 [node name="Wind" type="AnimatedSprite2D" parent="."]
 position = Vector2(343, 507)
