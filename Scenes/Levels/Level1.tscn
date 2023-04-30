@@ -27,7 +27,7 @@ region_rect = Rect2(0, 0, 2560, 720)
 [node name="SpawnGround" parent="." instance=ExtResource("2_hrjb1")]
 
 [node name="Bedroom" parent="." instance=ExtResource("2_sl6ss")]
-position = Vector2(-210, -349)
+position = Vector2(-208, -301)
 
 [node name="Player" parent="." instance=ExtResource("4_h4px6")]
 position = Vector2(38, -144)
