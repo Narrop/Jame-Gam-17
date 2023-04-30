@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvr6cnsuvqv6a"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/Grounds/Ground.gd" id="1_30bkx"]
+[ext_resource type="PackedScene" uid="uid://j3yf066x6p6u" path="res://Scenes/Levels/Grounds/Ground.tscn" id="2_yionn"]
+[ext_resource type="PackedScene" uid="uid://dykvknitr2ny4" path="res://Scenes/Levels/Grounds/Ground_couch.tscn" id="3_7a4b8"]
+
+[node name="Ground5" type="Node2D"]
+script = ExtResource("1_30bkx")
+
+[node name="Ground" parent="." instance=ExtResource("2_yionn")]
+position = Vector2(-126, 0)
+
+[node name="Ground3" parent="." instance=ExtResource("2_yionn")]
+position = Vector2(128, 0)
+
+[node name="Ground2" parent="." instance=ExtResource("3_7a4b8")]
