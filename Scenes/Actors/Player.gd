@@ -29,8 +29,7 @@ func _physics_process(delta):
 	
 	# If we are in runner mode, player runs in auto and can only jump
 	if state == 0:
-		if is_on_floor():
-			velocity.x = SPEED - slowing
+		velocity.x = SPEED - slowing
 	else:
 		# In fight mode, player can be controlled in every direction
 		direction = Input.get_axis("ui_left", "ui_right")
@@ -53,6 +52,10 @@ func _physics_process(delta):
 		slowing = slowing - 1
 	elif not is_on_floor():
 		sprite.play("Jumping")
+		if direction < 0:
+			sprite.flip_h = true
+		elif direction > 0 or state == 0:
+			sprite.flip_h = false
 	elif direction < 0:
 		sprite.play("Walking")
 		sprite.flip_h = true
